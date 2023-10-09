@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolSystem.Api", "..\webapi-sistema-escolar\SistemaEscolar\SchoolSystem.Api\SchoolSystem.Api.csproj", "{0F120BF2-47A1-44BD-92DC-D319E8A38163}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolSystem.Api", "SchoolSystem.Api\SchoolSystem.Api.csproj", "{B5C8723A-4CFA-4F6B-84F8-96B05FAF8538}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F120BF2-47A1-44BD-92DC-D319E8A38163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F120BF2-47A1-44BD-92DC-D319E8A38163}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F120BF2-47A1-44BD-92DC-D319E8A38163}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F120BF2-47A1-44BD-92DC-D319E8A38163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C8723A-4CFA-4F6B-84F8-96B05FAF8538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C8723A-4CFA-4F6B-84F8-96B05FAF8538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C8723A-4CFA-4F6B-84F8-96B05FAF8538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C8723A-4CFA-4F6B-84F8-96B05FAF8538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B2BAAA40-04BB-4CBD-9CC8-8A558ED27EE5}
+		SolutionGuid = {7D4ED7EA-2326-48AC-B630-F362475F30C7}
 	EndGlobalSection
 EndGlobal
