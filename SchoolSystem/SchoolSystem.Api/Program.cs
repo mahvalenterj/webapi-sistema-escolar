@@ -1,8 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
 using System.Reflection;
-
+using System.Text;
+using System.Text.Json;
+using System.Text.Unicode;
 
 namespace SchoolSystem.Api
 {
@@ -10,31 +16,27 @@ namespace SchoolSystem.Api
     {
         public static void Main(string[] args)
         {
-
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
+            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
-                var openApiInfo = new OpenApiInfo();
-
-                openApiInfo.Title = "Documenta��o de WebApi SchoolSystem";
-                openApiInfo.Description = "A documenta��o relata os m�todos e utiliza��es desta API";
-                openApiInfo.License = new OpenApiLicense
+                var openApiInfo = new OpenApiInfo
                 {
-                    Name = "MIT",
-                    Url = new Uri(@"http://www.mit.com/license")
-                };
-                openApiInfo.Contact = new OpenApiContact()
-                {
-                    Name = "Marianna Correa",
-                    Email = "mahvalenterj@gmail.com"
+                    Title = "Documentação de WebApi SchoolSystem",
+                    Description = "A documentação relata os métodos e utilizações desta API",
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT",
+                        Url = new Uri(@"http://www.mit.com/license")
+                    },
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Marianna Correa",
+                        Email = "mahvalenterj@gmail.com"
+                    }
                 };
 
                 options.SwaggerDoc("v1", openApiInfo);
@@ -46,21 +48,20 @@ namespace SchoolSystem.Api
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "API SchoolSystem v1");
+                });
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
             app.MapControllers();
 
             app.Run();
-
         }
     }
 }
